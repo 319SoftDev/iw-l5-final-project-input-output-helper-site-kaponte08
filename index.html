@@ -6,29 +6,110 @@
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=La+Belle+Aurore&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat+Brush&family=Fuzzy+Bubbles:wght@400;700&family=La+Belle+Aurore&display=swap" rel="stylesheet">
     <title>What flower are you?</title>
 </head>
 <body>
     <header>
+        <img src="img/What flower are you.png">
         <h1>What flower are you?</h1>
     </header>
     <main>
-        <section>
+        <section id="q1">
             <div class="question">What is your favorite month?</div>
-            <div class="answerbox" id="set1">
+            <figure><img src="img/calendar.jpeg" width="400pc"/></figure>
+            <div class="answerbox1" id="set1">
                 <div class="row">
-                    <div class="ans" id="ans1">November</div>
-                    <div class="ans" id="ans2">July</div>
+                    <button class="ans dahlia" id="ans1" value="1">November</button>
+                    <button class="ans" id="ans2" value="2">July</buttom>
 
                 </div>
                 <div class="row">
-                    <div class="ans" id="ans3">August</div>
-                    <div class="ans" id="ans4">March</div>
+                    <button class="ans" id="ans3" value="3">August</button>
+                    <button class="ans" id="ans4" value="4">March</button>
                 </div>
             </div>
+            <button class="summit" id="summit1">confirm</button>
+        </section>
+        <section id="q2" class="hidden">
+            <div class="question">How do you like spending your time></div>
+            <figure><img src="img/spendingAlone.jpg" width="400pc"/></figure>
+            <div class="answerbox2" id="set2">
+                <div class="row">
+                    <button class="ans" id="ans5" value="5">Reading</button>
+                    <button class="ans" id="ans6" value="6">Listening to Music</buttom>
+
+                </div>
+                <div class="row">
+                    <button class="ans" id="ans7" value="7">Sleep</button>
+                    <button class="ans" id="ans8" value="8">Hike</button>
+                </div>
+            </div>
+            <div class="buttons">            
+                <button class="back" id="back2">←</button>
+                <button class="summit" id="summit2">confirm</button>
+            </div>        </section>
+        <section id="q3" class="hidden">
+            <div class="question">Love Language?</div>
+            <figure><img src="img/love.jpg" width="400pc"/></figure>
+            <div class="answerbox3" id="set3">
+                <div class="row">
+                    <button class="ans" id="ans9" value="9">Quality Time</button>
+                    <button class="ans" id="ans10" value="10">Physical Affection</buttom>
+
+                </div>
+                <div class="row">
+                    <button class="ans" id="ans11" value="11">Acts of Service</button>
+                    <button class="ans" id="ans12" value="12">Gift Giving</button>
+                </div>
+                <button class="ans" id="ans13" value="13">Words of Affirmation</button>
+            </div>
+            <div class="buttons">            
+                <button class="back" id="back3">←</button>
+                <button class="summit" id="summit3">confirm</button>
+            </div>   
+        </section>
+        <section id="q4" class="hidden">
+            <div class="question">What is your Favorite color?</div>
+            <figure><img src="img/palette.jpg" width="400pc"/></figure>
+            <div class="answerbox4" id="set4">
+                <div class="row">
+                    <button class="ans" id="ans14" value="14">Red</button>
+                    <button class="ans" id="ans15" value="15">Blue</buttom>
+
+                </div>
+                <div class="row">
+                    <button class="ans" id="ans16" value="16">Orange</button>
+                    <button class="ans" id="ans17" value="17">Purple</button>
+                </div>
+            </div>
+            <div class="buttons">            
+                <button class="back" id="back4">←</button>
+                <button class="summit" id="summit4">confirm</button>
+            </div>
+        </section>
+        <section class="hidden" id="end">
+            <h2>
+                Wow! Congrats on making it to the end!
+                <br>
+                <span id="flowerAns">You got</span>
+            </h2>
+            <figure id="dahlia" class="flower hidden">
+                <img src="img/dahlia.jpg" alt="6 pink dahlia flowers as focused" />
+            </figure>
+            <figure class="flower hidden" id="ranumculus ">
+                <img src="img/ranumculus.jpg" />
+            </figure>
+            <figure class="flower hidden" id="chry">
+                <img src="img/chry.jpg" />
+            </figure>
+            <figure id="snapdragon" class="flower hidden">
+                <img src="img/snapdragons.jpg" />            
+            </figure>
         </section>
     </main>
     <footer></footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
