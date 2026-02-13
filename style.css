@@ -1,0 +1,147 @@
+body{
+    background-color: #ffd2dc;
+}
+header{
+    margin: auto;
+    margin-top: -40px;
+    line-height: 6pc;
+    width: 90%;
+    text-align: center;
+    font-size: 4vw;
+    font-family: "La Belle Aurore", cursive;
+}
+header img{
+    margin-bottom:-110px;
+}
+main{
+    width: 95%;
+    margin: auto;
+    font-family: "Caveat Brush", cursive;
+    display: flex;
+    flex-flow: column;
+    align-self: center;
+    gap: 20vh;
+    margin-top: -30px;
+}
+section{
+    width:80%;
+    margin: auto;
+    height: 50vh;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-around;
+    color: #cb0936;
+    align-items: center;
+}
+.question{
+    background-color: #ffb5d0;
+    padding: 10px;
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    font-size: 35px;
+}
+figure{
+    margin: auto;
+    padding: 25px;
+    display: flex;
+    flex-flow:column;
+    gap:10px;
+}
+.answerbox{
+    display: flex;
+    flex-flow: column wrap;
+    width: 50%;
+    margin: auto;
+}
+.row{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+}
+.ans{
+    text-align: center;
+    width:14vh;
+    height: auto;
+    border: none;
+    background-color: #ffc061;
+    color: #cb0936;
+    font-family: "Caveat Brush", cursive;
+    font-size: 25px;
+    margin: 8px;
+}
+.ans:hover{
+    background-color: #ffd95e;
+    color: #e70a3e;
+}
+.buttons{
+    width: 60%;
+    margin: auto;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+}
+.back{
+    background-color:#f4e7dd;
+    border:none;
+    border-radius: 5px;
+    width: 50px;
+    height: 35px;
+    margin: auto;
+    color: #cb0936;
+    font-family: "Caveat Brush", cursive;
+    font-size: 23px;
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+.back:hover{
+    background-color:#fce4d3;
+    color: #e40a3d;
+}
+.summit{
+    background-color:#f4e7dd;
+    border:none;
+    border-radius: 5px;
+    width: 100px;
+    height: 35px;
+    margin: auto;
+    color: #cb0936;
+    font-family: "Caveat Brush", cursive;
+    font-size: 23px;
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+.summit:hover{
+    background-color:#fce4d3;
+    color: #e40a3d;
+}
+.hidden{
+    display: none;
+}
+#end{
+    margin-top: -3pc;
+    width: 90%;
+}
+h2{
+    font-size: 46px;
+    text-align: center;
+    font-family: "Fuzzy Bubbles", sans-serif;
+    line-height: 40px;
+    font-weight: 400;
+}
+.flower img{
+    width: 100%;
+    max-width: 500px;
+}
+#flowerAns{
+    line-height: 60px;
+    font-weight: 700;
+}
+
+#ans13{
+    width: 220px;
+    margin: auto;
+}
+.chosen{
+    background-color: #fff567;
+}
