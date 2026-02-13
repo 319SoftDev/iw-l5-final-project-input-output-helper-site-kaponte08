@@ -34,6 +34,10 @@ let summit ={
     3:document.querySelector("#summit3"),
     4:document.querySelector("#summit4")
 }
+summit.forEach((btn) =>{
+    btn.disabled =true;
+}
+)
 let back ={
     2:document.querySelector("#back2"),
     3:document.querySelector("#back3"),
@@ -103,6 +107,7 @@ const choose = (e) =>{
     let elems = document.querySelectorAll(`.answerbox${n} .chosen`);
     console.log(elems);
     if(elems.length > 1){
+        summit[n].disabled = true;
         elems.forEach((items) =>{
             lowerPoints()
             items.classList.remove("chosen");
@@ -114,11 +119,18 @@ const choose = (e) =>{
 
 console.log("wrefewrwr");
 
-const hiding = () =>{
+const hiding = (e) =>{
     quests[`q${n}`].classList.toggle("hidden");
+    
     n+=1;
     quests[`q${n}`].classList.toggle("hidden");
     console.log(n);
+    if(e.target == summit[4]){
+        if(dhlpoints > hibipoints && dhlpoints > ranpoints && dhlpoints > spdpoints && dhlpoints > sunpoints && dhlpoints > chrypoints){
+            document.querySelector("#dahlia").classList.remove("hidden");
+            document.querySelector("#flowerAns").innerHTML = "You got Dahlia flower!";
+        }
+    }
 }
 const goingBack = () =>{
     quests[`q${n}`].classList.toggle("hidden");
@@ -196,6 +208,7 @@ ans[4].addEventListener("click", function(e){
     if(e.target.classList.contains("chosen")){
         ranpoints += 1;
         console.log("ran  " + ranpoints);
+        
     }
     else{
         ranpoints -= 1;
@@ -293,11 +306,11 @@ ans[10].addEventListener("click", function(e){
 ans[11].addEventListener("click", function(e){
     choose(e);
     if(e.target.classList.contains("chosen")){
-        larkpoints += 1;
+        dhlpoints += 1;
         console.log("lark " + larkpoints);
     }
     else{
-        larkpoints -= 1;
+        dhlpoints -= 1;
         toZero();
         console.log("lark " + larkpoints);
     }    
@@ -337,29 +350,23 @@ ans[14].addEventListener("click", function(e){
     choose(e);
     if(e.target.classList.contains("chosen")){
         chrypoints += 1;
-        dhlpoints += 1;
-        console.log("chry  " + chrypoints);
     }
     else{
         chrypoints -= 1;
-        dhlpoints -= 1;
         toZero();
-        console.log("chry " + chrypoints);
     }    
     declarePoints();
 })
 ans[15].addEventListener("click", function(e){
     choose(e);
     if(e.target.classList.contains("chosen")){
-        ranpoints += 1;
-        sunpoints += 1;
-        console.log("ran  " + ranpoints);
+        dhlpoints += 1;
+        spdpoints += 1;
     }
     else{
-        ranpoints -= 1;
-        sunpoints -= 1;
+        dhlpoints -= 1;
+        spdpoints -= 1;
         toZero();
-        console.log("ran " + ranpoints);
     }    
     declarePoints();
 })
@@ -368,28 +375,24 @@ ans[16].addEventListener("click", function(e){
     if(e.target.classList.contains("chosen")){
         ranpoints += 1;
         sunpoints += 1;
-        console.log("ran  " + ranpoints);
     }
     else{
         ranpoints -= 1;
         sunpoints -= 1;
         toZero();
-        console.log("ran " + ranpoints);
     }    
     declarePoints();
 })
 ans[17].addEventListener("click", function(e){
     choose(e);
     if(e.target.classList.contains("chosen")){
-        ranpoints += 1;
-        sunpoints += 1;
-        console.log("ran  " + ranpoints);
+        larkpoints += 1;
+        hibipoints += 1;
     }
     else{
-        ranpoints -= 1;
-        sunpoints -= 1;
+        larkpoints -= 1;
+        hibipoints -= 1;
         toZero();
-        console.log("ran " + ranpoints);
     }    
     declarePoints();
 })
