@@ -34,10 +34,7 @@ let summit ={
     3:document.querySelector("#summit3"),
     4:document.querySelector("#summit4")
 }
-summit.forEach((btn) =>{
-    btn.disabled =true;
-}
-)
+
 let back ={
     2:document.querySelector("#back2"),
     3:document.querySelector("#back3"),
@@ -107,7 +104,6 @@ const choose = (e) =>{
     let elems = document.querySelectorAll(`.answerbox${n} .chosen`);
     console.log(elems);
     if(elems.length > 1){
-        summit[n].disabled = true;
         elems.forEach((items) =>{
             lowerPoints()
             items.classList.remove("chosen");
@@ -125,25 +121,47 @@ const hiding = (e) =>{
     n+=1;
     quests[`q${n}`].classList.toggle("hidden");
     console.log(n);
-    if(e.target == summit[4]){
-        if(dhlpoints > hibipoints && dhlpoints > ranpoints && dhlpoints > spdpoints && dhlpoints > sunpoints && dhlpoints > chrypoints){
-            document.querySelector("#dahlia").classList.remove("hidden");
-            document.querySelector("#flowerAns").innerHTML = "You got Dahlia flower!";
-        }
+    if ( n == 4){
+        end.classList.toggle("hidden");
     }
+
 }
 const goingBack = () =>{
     quests[`q${n}`].classList.toggle("hidden");
     n-= 1;
     quests[`q${n}`].classList.toggle("hidden");
     console.log(n);
+    if ( n < 4){
+        end.classList.toggle("hidden");
+    }
 }
 
 
 summit[1].addEventListener("click", hiding);
 summit[2].addEventListener("click", hiding);
 summit[3].addEventListener("click", hiding);
-summit[4].addEventListener("click", hiding);
+summit[4].addEventListener("click", function(e){
+    hiding();
+    if(dhlpoints >3){
+        document.querySelector("#dahlia").classList.remove("hidden");
+        document.querySelector("#flowerAns").innerHTML = "You got Dahlia flower!";
+    }
+    if(ranpoints > 3){
+        document.querySelector("#ranumculus").classList.remove("hidden");
+        document.querySelector("#flowerAns").innerHTML = "You got Ranumculus flower!";
+    }
+    if(chrypoints > 3){
+        document.querySelector("#chry").classList.remove("hidden");
+        document.querySelector("#flowerAns").innerHTML = "You got Chrysanthemum flower!";
+    }
+    if(spdpoints > 3){
+        document.querySelector("#snapdragon").classList.remove("hidden");
+        document.querySelector("#flowerAns").innerHTML = "You got snapdragon flower!";
+    }
+    else{
+        document.querySelector("#flowerAns").innerHTML = "You got an unavailable flower! :(";    
+    }
+});
 
 back[2].addEventListener("click", goingBack);
 back[3].addEventListener("click", goingBack);
