@@ -1,5 +1,6 @@
 const end = document.querySelector("#end");
-const answer = document.querySelector(".ans")
+const flwans = document.querySelector("#flowerAns");
+const answer = document.querySelector(".ans");
 const ansSet = document.querySelector(".answerset");
 let dhlpoints = 0;
 let chrypoints = 0;
@@ -142,24 +143,24 @@ summit[2].addEventListener("click", hiding);
 summit[3].addEventListener("click", hiding);
 summit[4].addEventListener("click", function(e){
     hiding();
-    if(dhlpoints >3){
+    if(dhlpoints >= 4){
         document.querySelector("#dahlia").classList.remove("hidden");
-        document.querySelector("#flowerAns").innerHTML = "You got Dahlia flower!";
+        flwans.innerHTML = "You got Dahlia flower!";
     }
-    if(ranpoints > 3){
+    else if(ranpoints >=4){
         document.querySelector("#ranumculus").classList.remove("hidden");
-        document.querySelector("#flowerAns").innerHTML = "You got Ranumculus flower!";
+        flwans.innerHTML = "You got Ranumculus flower!";
     }
-    if(chrypoints > 3){
+    else if(chrypoints >=4 ){
         document.querySelector("#chry").classList.remove("hidden");
-        document.querySelector("#flowerAns").innerHTML = "You got Chrysanthemum flower!";
+        flwans.innerHTML = "You got Chrysanthemum flower!";
     }
-    if(spdpoints > 3){
+    else if(spdpoints >= 4){
         document.querySelector("#snapdragon").classList.remove("hidden");
-        document.querySelector("#flowerAns").innerHTML = "You got snapdragon flower!";
+        flwans.innerHTML = "You got snapdragon flower!";
     }
     else{
-        document.querySelector("#flowerAns").innerHTML = "You got an unavailable flower! :(";    
+        flwans.innerHTML = "You got an unavailable flower! :(";    
     }
 });
 
@@ -189,13 +190,13 @@ ans[2].addEventListener("click", function(e){
     choose(e);
     if(e.target.classList.contains("chosen")){
         spdpoints += 1;
-        larkpoints += 1;
+        ranpoints += 1;
         console.log("spd " + spdpoints);
         console.log("lark " + larkpoints);
     }
     else{
         spdpoints -= 1;
-        larkpoints -= 1;
+        ranpoints -= 1;
         toZero();
         console.log("spd " + spdpoints);
         console.log("lark " + larkpoints);
@@ -206,14 +207,14 @@ ans[3].addEventListener("click", function(e){
     n = 1;
     choose(e);
     if(e.target.classList.contains("chosen")){
-        sunpoints += 1;
-        hibipoints += 1;
+        chrypoints += 1;
+        ranpoints += 1;
         console.log("sun " + sunpoints);
         console.log("hibi " + hibipoints);
     }
     else{
-        sunpoints -= 1;
-        hibipoints -= 1;
+        chrypoints -= 1;
+        ranpoints -= 1;
         toZero();
         console.log("sun " + sunpoints);
         console.log("hibi " + hibipoints);
@@ -224,12 +225,12 @@ ans[4].addEventListener("click", function(e){
     n = 1
     choose(e);
     if(e.target.classList.contains("chosen")){
-        ranpoints += 1;
+        dhlpoints += 1;
         console.log("ran  " + ranpoints);
         
     }
     else{
-        ranpoints -= 1;
+        dhlpoints -= 1;
         toZero();
         console.log("ran " + ranpoints);
     }    
@@ -238,11 +239,11 @@ ans[4].addEventListener("click", function(e){
 ans[5].addEventListener("click", function(e){
     choose(e);
     if(e.target.classList.contains("chosen")){
-        hibipoints += 1;
+        spdpoints += 1;
         console.log("hibi " + hibipoints);
     }
     else{
-        hibipoints -= 1;
+        spdpoints -= 1;
         toZero();
         console.log("hibi " + hibipoints);
     }    
@@ -251,13 +252,13 @@ ans[5].addEventListener("click", function(e){
 ans[6].addEventListener("click", function(e){
     choose(e);
     if(e.target.classList.contains("chosen")){
-        larkpoints += 1;
+        dhlpoints += 1;
         ranpoints += 1;
         console.log("lark  " + larkpoints);
         console.log("ran  " + ranpoints);
     }
     else{
-        larkpoints -= 1;
+        dhlpoints -= 1;
         ranpoints -= 1;
         toZero();
         console.log("lark  " + larkpoints);
@@ -281,13 +282,13 @@ ans[7].addEventListener("click", function(e){
 ans[8].addEventListener("click", function(e){
     choose(e);
     if(e.target.classList.contains("chosen")){
-        dhlpoints += 1;
-        sunpoints += 1;
+        chrypoints += 1;
+        ranpoints += 1;
         console.log("sun  " + sunpoints);
     }
     else{
-        dhlpoints -= 1;
-        sunpoints -= 1;
+        chrypoints -= 1;
+        spdpoints -= 1;
         toZero();
         console.log("sun " + sunpoints);
     }    
@@ -296,11 +297,11 @@ ans[8].addEventListener("click", function(e){
 ans[9].addEventListener("click", function(e){
     choose(e);
     if(e.target.classList.contains("chosen")){
-        larkpoints += 1;
+        ranpoints += 1;
         console.log("lark " + larkpoints);
     }
     else{
-        larkpoints -= 1;
+        ranpoints -= 1;
         toZero();
         console.log("lark " + larkpoints);
     }    
@@ -309,13 +310,13 @@ ans[9].addEventListener("click", function(e){
 ans[10].addEventListener("click", function(e){
     choose(e);
     if(e.target.classList.contains("chosen")){
-        ranpoints += 1;
-        sunpoints += 1;
+        dhlpoints += 1;
+        spdpoints += 1;
         console.log("ran  " + ranpoints);
     }
     else{
-        ranpoints -= 1;
-        sunpoints -= 1;
+        dhlpoints -= 1;
+        spdpoints -= 1;
         toZero();
         console.log("ran " + ranpoints);
     }    
@@ -337,13 +338,11 @@ ans[11].addEventListener("click", function(e){
 ans[12].addEventListener("click", function(e){
     choose(e);
     if(e.target.classList.contains("chosen")){
-        ranpoints += 1;
-        sunpoints += 1;
+        chrypoints += 1;
         console.log("ran  " + ranpoints);
     }
     else{
-        ranpoints -= 1;
-        sunpoints -= 1;
+        chrypoints -= 1;
         toZero();
         console.log("ran " + ranpoints);
     }    
@@ -353,11 +352,9 @@ ans[13].addEventListener("click", function(e){
     choose(e);
     if(e.target.classList.contains("chosen")){
         spdpoints += 1;
-        hibipoints += 1;
         console.log("ran  " + ranpoints);
     }
     else{
-        hibipoints -= 1;
         spdpoints -= 1;
         toZero();
         console.log("hibi " + hibipoints);
@@ -367,10 +364,10 @@ ans[13].addEventListener("click", function(e){
 ans[14].addEventListener("click", function(e){
     choose(e);
     if(e.target.classList.contains("chosen")){
-        chrypoints += 1;
+        dhlpoints += 1;
     }
     else{
-        chrypoints -= 1;
+        dhlpoints -= 1;
         toZero();
     }    
     declarePoints();
@@ -392,11 +389,11 @@ ans[16].addEventListener("click", function(e){
     choose(e);
     if(e.target.classList.contains("chosen")){
         ranpoints += 1;
-        sunpoints += 1;
+        spdpoints += 1;
     }
     else{
         ranpoints -= 1;
-        sunpoints -= 1;
+        spdpoints -= 1;
         toZero();
     }    
     declarePoints();
@@ -404,12 +401,12 @@ ans[16].addEventListener("click", function(e){
 ans[17].addEventListener("click", function(e){
     choose(e);
     if(e.target.classList.contains("chosen")){
-        larkpoints += 1;
-        hibipoints += 1;
+        spdpoints += 1;
+        chrypoints += 1;
     }
     else{
-        larkpoints -= 1;
-        hibipoints -= 1;
+        spdpoints -= 1;
+        chrypoints -= 1;
         toZero();
     }    
     declarePoints();
